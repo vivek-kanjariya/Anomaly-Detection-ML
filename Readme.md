@@ -1,54 +1,174 @@
+# 🧠 Anomaly Detection using CNN (VGG) | Streamlit App
 
-# InspectorsAlly
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.10-blue.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 
-## Boost Your Quality Control with InspectorsAlly - The Ultimate AI-Powered Inspection App
+A simple but powerful image-based anomaly detection system using a VGG-style Convolutional Neural Network, built with PyTorch and deployed with Streamlit.
 
-InspectorsAlly is a powerful AI-powered application designed to help businesses streamline their quality control inspections. With InspectorsAlly, companies can ensure that their products meet the highest standards of quality, while reducing inspection time and increasing efficiency.
+👉 **Live Demo**: [https://anomaly-detectionn.streamlit.app](https://anomaly-detectionn.streamlit.app)
 
-This advanced inspection app uses state-of-the-art computer vision algorithms and machine learning models to perform visual quality control inspections with unparalleled accuracy and speed. InspectorsAlly is capable of identifying even the slightest defects, such as scratches, dents, discolorations, and more.
+---
 
-InspectorsAlly is easy to use, with a simple and intuitive interface that allows users to set up their inspection criteria quickly and easily. The application can be customized to fit the specific needs of any industry, with the ability to set inspection thresholds and adjust parameters as needed.
+## 📸 Overview
 
-With InspectorsAlly, businesses can optimize their quality control process and ensure that their products meet the highest standards of quality. Say goodbye to time-consuming and error-prone manual inspections and hello to faster, more accurate, and more efficient quality control inspections with InspectorsAlly.
+This project is a lightweight anomaly detection system that:
 
-<br>
-<hr>
-<br>
+- Classifies whether an image is normal or anomalous.
+- Uses a CNN model (based on VGG) trained with PyTorch.
+- Deploys a clean and interactive interface using **Streamlit**.
 
-## ⭐ Anomaly Detection Dataset 
+---
 
-> ### ⭐ Dataset Download Link: https://www.mvtec.com/company/research/datasets/mvtec-ad
-This is a 400-image dataset, that contains images of good items (labeled as class ‘Good’) and items with a defect (labeled as class ‘Anomaly’). Dataset is imbalanced — with more samples of good images than defective ones. Item in the image may be literally of any type and complexity — bottle, cable, pill, tile, leather, zipper, etc. Below is an example of how the dataset may look like.
+## 🔧 Tech Stack
 
-![sample dataset images](docs/overview_dataset.jpg)
+| Category            | Technology Used         |
+|---------------------|--------------------------|
+| 🧠 ML Framework      | PyTorch, Torchvision     |
+| 📊 Data Analysis     | Pandas, NumPy, Seaborn   |
+| 📈 Visualization     | Matplotlib               |
+| 📦 Deployment        | Streamlit                |
+| 📸 Image Handling    | Pillow, OpenCV           |
 
-<br>
-<hr>
-<br>
+---
 
-## ⭐ Development References:
-1. https://www.analyticsvidhya.com/blog/2021/06/transfer-learning-using-vgg16-in-pytorch/
-2. https://blog.paperspace.com/vgg-from-scratch-pytorch/
+## ⚙️ Features
 
-<br>
-<hr>
-<br>
+- 🖼️ Upload an image to check for anomalies
+- 📊 Real-time prediction with confidence scores
+- 📈 Visualize output using bar plots
+- ⚡ Lightweight and responsive UI
 
-## ⭐ Streamlit Deployment Configurations:
+---
+
+## 🖥️ Local Setup Instructions
+
+Follow these steps to run the app locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/vivek-kanjariya/Anomaly-Detection-ML.git
+cd Anomaly-Detection-ML
 ```
-[theme]
-base="dark"
 
-[browser]
-gatherUsageStats = false
+### 2. Create a Virtual Environment
+
+```bash
+python3.10 -m venv venv
+source venv/bin/activate  # For Windows: venv\Scripts\activate
 ```
-<br>
-<hr>
-<br>
 
-## ⭐ Deployment References:
-1. https://30days.streamlit.app/
-2. https://docs.streamlit.io/streamlit-community-cloud/get-started/deploy-an-app
-3. https://streamlit-cloud-example-apps-streamlit-app-sw3u0r.streamlit.app/?hsCtaTracking=28f10086-a3a5-4ea8-9403-f3d52bf26184|22470002-acb1-4d93-8286-00ee4f8a46fb
-4. https://docs.streamlit.io/library/advanced-features/configuration
+### 3. Install Required Dependencies
 
+```bash
+pip install -r requirements.txt
+```
+
+✅ **Note**: Make sure you're using Python 3.10+. Use virtual environments to avoid dependency conflicts.
+
+### 4. Launch the Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+The app will open in your default browser at:  
+📍 `http://localhost:8501`
+
+---
+
+## 🧠 How It Works
+
+### 1. Image Upload  
+You upload an image via the Streamlit UI.
+
+### 2. Preprocessing  
+- Image is resized and normalized.  
+- Converted to tensor format for PyTorch.
+
+### 3. Prediction  
+- A VGG-style CNN model is loaded.  
+- Model classifies the image as `Normal` or `Anomalous`.
+
+### 4. Visualization  
+- Results are visualized using a bar plot with Matplotlib.
+
+---
+
+## 📁 Project Structure
+
+```
+Anomaly-Detection-ML/
+├── app.py                  # Streamlit App UI + Logic
+├── model.pth               # Pre-trained model weights
+├── utils/
+│   └── predict.py          # Model loading and prediction logic
+├── requirements.txt        # Python dependencies
+├── packages.txt            # Linux apt dependencies
+├── .streamlit/
+│   └── config.toml         # Streamlit theming
+├── README.md               # Project documentation
+└── data/                   # Optional: Sample images
+```
+
+---
+
+## 🧩 Dependencies
+
+Main Python packages used:
+
+```txt
+torch==2.0.0
+torchvision==0.15.1
+pandas==1.4.2
+numpy==1.20.1
+opencv-python
+matplotlib==3.5.1
+seaborn==0.11.2
+streamlit==1.19.0
+Pillow
+```
+
+Install them all using:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🌐 Deployment
+
+The app is deployed using **Streamlit Cloud**.
+
+👉 Try the app live here:  
+🔗 [https://anomaly-detectionn.streamlit.app](https://anomaly-detectionn.streamlit.app)
+
+No installation required. Just open and test.
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License**.  
+You're free to fork, modify, and build upon it.
+
+---
+
+## 🙋‍♂️ Author
+
+**Vivek Kanjariya**
+
+- GitHub: [@vivek-kanjariya](https://github.com/vivek-kanjariya)
+
+---
+
+## ⭐️ Support
+
+If you find this project useful:
+
+- 🌟 Star the repo  
+- 🔁 Share it with others  
+- 🛠️ Suggest features via issues or PR  
+- 💬 Connect for feedback or collaboration
