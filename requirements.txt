@@ -12,3 +12,4 @@ numpy>=1.21.0,<2.0.0
 streamlit==1.19.0
 opencv-python
 typing-extensions>=4.0.0
+altair==4.2.2
