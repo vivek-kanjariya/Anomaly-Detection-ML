@@ -1,8 +1,8 @@
 [theme]
-primaryColor = "#35bc62"
-backgroundColor = "#00172B"
-secondaryBackgroundColor = "#35bc62"
-textColor = "#DCDCDC"
+primaryColor = "#38EF7D"               # A modern, bright green for key elements
+backgroundColor = "#121212"            # Deep dark gray for main background (better than pure black)
+secondaryBackgroundColor = "#1E1E1E"   # Slightly lighter dark for containers
+textColor = "#E0E0E0"                  # Soft white for readability
 font = "sans serif"
 
 [browser]
