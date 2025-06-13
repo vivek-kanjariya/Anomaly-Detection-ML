@@ -34,6 +34,8 @@ with st.sidebar:
     st.subheader("About Anomaly Detection")
     st.write("This app uses AI to automate quality control by detecting defects in leather products.")
     st.write("Even minor scratches or discolorations can be caught using deep learning-based visual inspection.")
+    st.write("Model Accuracey is about only 66% On given Dataset Provided")
+    st.warning("Application Might be on Sleep as in Streamlit")
 
 # Input Method
 st.subheader("Select Image Input Method")
